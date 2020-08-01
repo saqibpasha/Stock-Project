@@ -1,0 +1,89 @@
+<div class="card shadow">
+    <p class="h4 card-header">Add New Company</p>
+    <div class="card-body bg-light">
+        <p class="card-text h6">Please fill the details:</p>
+        <form >
+            <div class="input-group mt-3 mb-3">
+                <div class="input-group-prepend">
+                    <span class="input-group-text">Company Name</span>
+                </div>
+                <input type="text" class="form-control" [(ngModel)]="company.companyName"  [ngModelOptions]="{standalone: true}" />
+            </div>
+           
+            <div class="input-group mb-3">
+                <div class="input-group-prepend">
+                    <span class="input-group-text"> Turnover in Rs.</span>
+                </div>
+                <input type="text" class="form-control" [(ngModel)]="company.turnover"  [ngModelOptions]="{standalone: true}">
+                <div class="input-group-append">
+                    <span class="input-group-text">.00</span>
+                </div>
+            </div>
+            <div class="input-group mt-3 mb-3">
+                <div class="input-group-prepend">
+                    <span class="input-group-text">CEO</span>
+                </div>
+                <input type="text" class="form-control" [(ngModel)]="company.ceo"  [ngModelOptions]="{standalone: true}" />
+            </div>
+            <div class="input-group mt-3 mb-3">
+                <div class="input-group-prepend">
+                    <span class="input-group-text">Company Code</span>
+                </div>
+                <input type="text" class="form-control" [(ngModel)]="company.companyCode"  [ngModelOptions]="{standalone: true}" />
+            </div>
+            <div class="input-group mt-3 mb-3">
+                <div class="input-group-prepend">
+                    <span class="input-group-text">Board of Director</span>
+                </div>
+                <input type="text" class="form-control" [(ngModel)]="company.boardOfDirector"  [ngModelOptions]="{standalone: true}"/>
+            </div>
+            <div class="input-group mb-3">
+                <div class="input-group-prepend">
+                    <span class="input-group-text">About Company</span>
+                </div>
+                <textarea class="form-control" aria-label="With textarea" [(ngModel)]="company.briefWriteup"  [ngModelOptions]="{standalone: true}"></textarea>
+            </div>
+            <div class="input-group mb-3">
+                <div class="input-group-prepend">
+                    <label class="input-group-text" for="inputGroupSelect01">Options</label>
+                </div>
+                <select class="custom-select" id="inputGroupSelect01" [(ngModel)]="company.stockExchange"  [ngModelOptions]="{standalone: true}">
+                    <option selected  >Choose Stock Exchange...</option>
+                    <option *ngFor="let stock_exchange of stock_exchanges">{{stock_exchange.name}}</option>
+                    <!--<option value="2">NSE</option>
+                    <option value="3">NASDAQ</option>
+                    <option value="4">NYSE</option>-->
+                </select>
+            </div>
+            <div class="input-group mb-3">
+                <div class="input-group-prepend">
+                    <label class="input-group-text" for="inputGroupSelect02">Options</label>
+                </div>
+                <select class="custom-select" id="inputGroupSelect02" [(ngModel)]="company.sector"  [ngModelOptions]="{standalone: true}">
+                    <option selected>Choose Sector...</option>
+                    <option value="IT">IT</option>
+                    <option value="Industrial">Industrial</option>
+                    <option value="Financial">Financial</option>
+                    <option value="Telecom">Telecom</option>
+                </select>
+            </div>
+            <div class="row d-flex justify-content-center"  *ngIf="showMsg">
+                <div class="col-xs-12 ">
+                  <p class="alert alert-success ">
+                      <strong>Successfully Updated</strong>
+        
+                  </p>
+                </div>
+              </div>
+            <div class="d-flex no-gutters">
+                <div class="col">
+                    <button type="submit" class="btn btn-success" (click)="editCompany()">Update</button>
+                    <button type="reset" class="btn btn-danger ml-2">Reset</button>
+                </div>
+                <div>
+                    <button (click)="backClicked()" class="btn btn-secondary">Back</button>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>

@@ -1,0 +1,49 @@
+<html>
+    <head>
+    <style>
+  
+
+    </style>
+</head>
+<div class="qw">
+
+<div class="card shadow">
+    <p class="h4 card-header text-center"><b>List of Companies</b></p>
+    <div class="card-body bg-light">
+            <div class="firefly"></div>
+            <div class="firefly"></div>
+            <div class="firefly"></div>
+            <div class="firefly"></div>
+            <div class="firefly"></div>
+            <div class="firefly"></div>
+            <div class="firefly"></div>
+        <table class="table table-borderless table-hover">
+            <thead>
+                <tr class="">
+                    <th scope="col">ID</th>
+                    <th scope="col">Company Name</th>
+                    <th scope="col">Stock Exchanges</th>
+                    <th scope="col">Sector</th>
+                    <th>Delete</th>
+                    <th>Update</th>
+                    
+                </tr>
+            </thead>
+            <tbody>
+                   
+                <tr *ngFor="let company of companies">
+                    <th scope="row">{{company.id}}</th>
+                    <td>{{company.companyName}}</td>
+                    <td>{{company.stockExchange}}</td>
+                    <td>{{company.sector}}</td>
+                    <td scope="col"><button class="btn btn-sm btn-danger" (click)="deleteCompany(company.id)">Delete</button></td>
+                    <td scope="col"><button class="btn btn-sm btn-outline-success" routerLink='/admin/update-company/{{company.id}}'>Update</button></td>
+                </tr>
+                
+            </tbody>
+        </table>
+
+    </div>
+</div>
+</div>
+</html>

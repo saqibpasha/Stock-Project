@@ -1,0 +1,43 @@
+<html>
+    <head>
+    <style>
+  
+
+    </style>
+</head>
+<div>
+    <form role="form" id="form-buscar">
+        <div class="form-group mb-5">
+        <div class="input-group">
+        <input  [(ngModel)]="companyName"  [ngModelOptions]="{standalone: true}" id="1" class="form-control" type="text" name="search" placeholder="Enter the name of the Company" required/>
+        <span class="input-group-btn">
+        <button class="btn btn-success" (click)="onSubmit()" type="submit">
+        <i class="glyphicon glyphicon-search" aria-hidden="true"></i> Search
+        </button>
+        </span>
+        </div>
+        </div>
+        </form>
+</div>
+<div class="qw">
+
+<div class="card shadow" *ngIf="show">
+    <p class="h4 card-header text-center">Company Details</p>
+    <div class="card-body bg-light">
+            
+        <ul class="list-group text-center">
+            <li class="list-group-item"><b>Company Name : </b>{{company.companyName}}</li>
+            <li class="list-group-item"><b>Board Of Directors : </b>{{company.boardOfDirector}}</li>
+            <li class="list-group-item"><b>Brief Writeup : </b>{{company.briefWriteup}}</li>
+            <li class="list-group-item"><b>CEO : </b>{{company.ceo}}</li>
+            <li class="list-group-item"><b>Company Code : </b>{{company.companyCode}}</li>
+            <li class="list-group-item"><b>Sector : </b>{{company.sector}}</li>
+            <li class="list-group-item"><b>Stock Exchange : </b>{{company.stockExchange}}</li>
+            <li class="list-group-item"><b>Turnover : </b>{{company.turnover}}</li>
+          </ul>
+        
+
+    </div>
+</div>
+</div>
+</html>

@@ -1,0 +1,49 @@
+<div class="card shadow">
+    <p class="h4 card-header text-center">Add New Stock Exchange</p>
+    <div class="card-body bg-light">
+        <p class="card-text h6">Please fill the details:</p>
+        <form>
+            <div class="input-group mt-3 mb-3">
+                <div class="input-group-prepend">
+                    <span class="input-group-text">Stock Exchange Name</span>
+                </div>
+                <input type="text" class="form-control" [(ngModel)]="stock_exchange.name"  [ngModelOptions]="{standalone: true}" />
+            </div>
+            <div class="input-group mb-3">
+                <div class="input-group-prepend">
+                    <span class="input-group-text">Brief Writeup</span>
+                </div>
+                <textarea class="form-control" aria-label="With textarea" [(ngModel)]="stock_exchange.brief"  [ngModelOptions]="{standalone: true}"></textarea>
+            </div>
+            <div class="input-group mb-3">
+                <div class="input-group-prepend">
+                    <span class="input-group-text">Address</span>
+                </div>
+                <textarea class="form-control" aria-label="With textarea" [(ngModel)]="stock_exchange.address"  [ngModelOptions]="{standalone: true}"></textarea>
+            </div>
+            <div class="input-group mb-3">
+                <div class="input-group-prepend">
+                    <span class="input-group-text">Remarks</span>
+                </div>
+                <textarea class="form-control" aria-label="With textarea" [(ngModel)]="stock_exchange.remarks"  [ngModelOptions]="{standalone: true}"></textarea>
+            </div>
+            <div class="row d-flex justify-content-center"  *ngIf="showMsg">
+                <div class="col-xs-12 ">
+                  <p class="alert alert-success ">
+                      <strong>Registration Success!</strong>
+        
+                  </p>
+                </div>
+              </div>
+            <div class="d-flex no-gutters ">
+                <div class="col">
+                    <button type="submit" class="btn btn-success" (click)="addStock_Exchange()">Add</button>
+                    <button type="reset" class="btn btn-danger ml-2">Reset</button>
+                </div>
+                <div>
+                    <button (click)="backClicked()" class="btn btn-secondary">Back</button>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>

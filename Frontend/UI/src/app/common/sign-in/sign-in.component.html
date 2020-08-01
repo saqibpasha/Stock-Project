@@ -1,0 +1,142 @@
+<html>
+    <head>
+
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    
+     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Allerta+Stencil">
+    </head>
+
+    <body>
+        <header class="shadow" >
+            <nav class="navbar navbar-expand-lg navbar-dark " style="  box-shadow: 0 20px 20px -20px rgb(87, 12, 87);">
+                <div class="container">
+                       
+                    <a class="navbar-brand" href="#">
+                            
+                             <h1 class="w3-container  w3-center w3-allerta" >Stock Show</h1>
+                                    
+                            </a>
+                       
+                </div>
+            </nav>
+        </header>
+
+
+        <div class="login-wrap ">
+
+            <div class="login-html text-center ">
+
+                <input id="tab-1" type="radio" name="tab" class="sign-in"><label for="tab-1" class="tab">Admin</label>
+
+                <input id="tab-2" type="radio" name="tab" class="sign-up"checked  ><label for="tab-2" class="tab">User</label>
+
+                <div class="login-form mt-sm-3">
+
+                    <div class="sign-in-htm">
+                        <form >
+                            <div class="form-group mt-sm-3">
+                                <label class="text-light">Username</label>
+                                <input type="text" [(ngModel)]="adminName" class="form-control" name="name">
+                            </div>
+                            <div class="form-group mb-sm-5">
+                                <label class="text-light">Password</label>
+                                <input type="password" [(ngModel)]="adminPassword" class="form-control" name="password">
+                            </div>
+                            <div class="row d-flex justify-content-center"  *ngIf="showMsgAdmin">
+                                <div class="col-xs-12 ">
+                                  <p class="alert alert-danger ">
+                                      <strong>Invalid Username/Password</strong>
+                        
+                                  </p>
+                                </div>
+                              </div>
+                            <div class="group mt-4 ">
+                            <button class="button mt-sm-5 " (click)="onSubmitAdmin()" >Login</button>
+                            </div>
+
+
+
+                        </form>
+                        <div class="hr"></div>
+
+                        
+
+                    </div>
+
+                    <div class="sign-up-htm">
+                            <form #userForm=ngForm >
+                                <div class="form-group mt-sm-3">
+                                    <label class="text-light">Username</label>
+                                    <input type="text" 
+                                    [(ngModel)]="user.username" 
+                                    [ngClass]="{'is-invalid': username.errors && username.touched}"
+                                    class="form-control" 
+                                    name="name" 
+                                    required 
+                                    #username="ngModel"
+
+                                    >
+                                    <div class="invalid-feedback">
+                                        Username Required
+
+
+                                    </div>
+                                </div>
+                                <div class="form-group mb-sm-5 ">
+                                    <label class="text-light">Password</label>
+                                    <input type="password" 
+                                    [(ngModel)]="user.password"
+                                    [ngClass]="{'is-invalid': password.errors && password.touched}" 
+                                    class="form-control" 
+                                    name="password"
+                                    required
+                                    #password="ngModel"
+                                    >
+                                    <div class="invalid-feedback">
+                                        Password Required
+
+
+                                    </div>
+                                </div>
+                                <div class="row d-flex justify-content-center"  *ngIf="showMsg">
+                                    <div class="col-xs-12 ">
+                                      <p class="alert alert-danger ">
+                                          <strong>Invalid Username/Password</strong>
+                            
+                                      </p>
+                                    </div>
+                                  </div>
+                                <div class="group mt-4">
+                                <button [disabled]="!userForm.form.valid" class="button mt-sm-5 " (click)="onSubmit()">Login</button>
+                                </div>
+
+
+
+                            </form>
+
+                        <div class="hr"></div>
+
+                        <div class="foot-lnk ">
+
+                                <a routerLink="/sign-up" class="text-light" >Click Here to Register</a>
+
+                           
+
+                        </div>
+                        
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+
+
+    </body>
+
+</html>

@@ -1,0 +1,2 @@
+INSERT IGNORE INTO Stock_Exchange(id,name,brief,address,remarks) VALUES (1,"BSE","Asia's Premier Stock Exchange","Mumbai","Established in 19th Century");
+INSERT IGNORE INTO Stock_Exchange(id,name,brief,address,remarks) VALUES (2,"NSE","New Stock Exchange","Mumbai","Established in 1992");

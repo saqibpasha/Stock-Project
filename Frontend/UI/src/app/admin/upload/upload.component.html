@@ -1,0 +1,79 @@
+<div *ngIf="show">
+    <div class="container">
+      <!-- For demo purpose -->
+      <div class="row mb-5 text-center text-white">
+        <div class="col-lg-10 mx-auto">
+          <h1 class="display-4">Import Stock Data </h1>
+        </div>
+      </div>
+      <!-- End -->
+  
+  
+      <div class="row">
+        <div class="col-lg-5 mx-auto">
+          <div class="p-5 bg-white shadow rounded-lg"><img src="assets/images/logo.png" alt="" width="200" class="d-block mx-auto mb-4 rounded-pill">
+  
+            <!-- Default bootstrap file upload-->
+  
+            <h6 class="text-center mb-4 text-muted">
+              Upload Stock Data in Excel File
+            </h6>
+  
+            <div class="custom-file overflow-hidden rounded-pill mb-2">
+              <input id="customFile" (change)="onFileChange($event)" multiple="false" type="file" class="custom-file-input rounded-pill">
+              <label for="customFile" class="custom-file-label rounded-pill">Choose file</label>
+            </div>
+
+            <div class="row d-flex justify-content-center mt-sm-3"  *ngIf="showMsg">
+                <div class="col-xs-12 ">
+                  <p class="alert alert-danger ">
+                      <strong>Incorrect Excel Format</strong>
+        
+                  </p>
+                </div>
+              </div>
+              <div class="container-fluid mt-sm-3">
+                <div class="col-sm-12 text-center">
+                    <button class="btn btn-primary btn-sm btn-block" (click)="uploadStockPrice()" title="Submit"> Upload </button>
+                </div>
+             </div>
+             <div class="row d-flex justify-content-center mt-sm-3"  *ngIf="loading">
+              <div class="col-xs-12 ">
+                <p class="alert alert-primary ">
+                    <strong>Loading...</strong>
+      
+                </p>
+              </div>
+            </div>
+            <!-- End -->
+  
+            
+  
+          </div>
+        </div>
+      </div>
+    </div>
+</div>
+<div class="jumbotron justify-content-center" *ngIf="show2">
+    <h1 class="display-4 text-center text-success mb-5">File Uploaded Successfully</h1>
+    <p class="lead text-center  ">Excel File Details</p>
+    <hr class="my-4 mb-5 ">
+    <div>
+        <p class="lead text-center "><b>Company : </b>{{companyName}}</p>
+        <p class="lead text-center "><b>Stock Exchange : </b>{{stockExchange}}</p>
+        <p class="lead text-center "><b>Start Date : </b>{{start}}</p>
+        <p class="lead text-center "><b>End Date : </b>{{end}}</p>
+        <p class="lead text-center "><b>Number of Records : </b>{{count}}</p>
+        
+    </div>
+    <div class="container-fluid mt-sm-3">
+        <div class="col-sm-12 text-center">
+            <button class="btn btn-primary btn-sm btn-lg mt-3" (click)="addMoreFile()" title="Submit"> Click To Add More Files </button>
+        </div>
+     </div>
+
+    
+
+  </div>
+  
+  

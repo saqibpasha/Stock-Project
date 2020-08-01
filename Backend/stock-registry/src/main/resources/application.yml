@@ -1,0 +1,38 @@
+spring:
+  application:
+    name: stock-registry-service
+
+server:
+  port: 8761
+
+eureka:
+  client:
+    registerWithEureka: false
+    fetchRegistry: false 
+    server:
+      waitTimeInMsWhenSyncEmpty: 0
+      
+zuul:
+  #Service will be mapped under the /api URI
+  prefix: /api
+  routes:
+    stock_company-service:
+      path: /stock_company-service/**
+      url: http://localhost:8305
+    stock_price-service:
+      path: /stock_price-service/**
+      url: http://localhost:8304
+    stock_user-service:
+      path: /stock_user-service/**
+      url: http://localhost:8303
+    stock_ipo-service:
+      path: /stock_ipo-service/**
+      url: http://localhost:8302
+    stock_exchange-service:
+      path: /stock_exchange-service/**
+      url: http://localhost:8301
+    
+    
+      
+
+

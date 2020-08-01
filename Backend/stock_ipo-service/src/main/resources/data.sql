@@ -1,0 +1,2 @@
+INSERT IGNORE INTO Stock_Ipo(id,share_price,total_shares,name,stock_exchange,remarks,sector,date) VALUES (1,2000,100000,"Jio","BSE","Big Company","Information Technology","2020-08-12");
+INSERT IGNORE INTO Stock_Ipo(id,share_price,total_shares,name,stock_exchange,remarks,sector,date) VALUES (2,5000,200000,"Birla","NSE","Average Company","Health Care","2020-09-09");

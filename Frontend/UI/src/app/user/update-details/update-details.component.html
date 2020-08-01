@@ -1,0 +1,120 @@
+<app-header></app-header>
+<section class="container">
+        <div class="row m-4">
+            <div class="col" style="height: 70vh;">
+                <form class="pt-4">
+                    <div class="card shadow">
+                        <p class="h4 card-header">Update User</p>
+                        <div class="card-body bg-light">
+    
+                            <p class="card-text">Details:&nbsp;</p>
+                            <form #userForm=ngForm>
+    
+                                <div class="input-group mt-3 mb-3">
+                                    <div class="input-group-prepend">
+                                        <span class="input-group-text">Username</span>
+                                    </div>
+                                    <input type="text" class="form-control" [(ngModel)]="user.username"  [ngModelOptions]="{standalone: true}"
+                                    [ngClass]="{'is-invalid': username.errors && username.touched}" 
+                                    name="name"
+                                    required 
+                                    #username="ngModel"
+                                    />
+                                    <div class="invalid-feedback">
+                                        Username Required
+
+
+                                    </div>
+                                </div>
+    
+                                <div class="input-group mb-3">
+                                    <div class="input-group-prepend">
+                                        <span class="input-group-text">Password</span>
+                                    </div>
+                                    <input type="password" class="form-control" [(ngModel)]="user.password"  [ngModelOptions]="{standalone: true}"
+                                    [ngClass]="{'is-invalid': password.errors && password.touched}" 
+                                name="password"
+                                required 
+                                #password="ngModel"
+                                    />
+                                    <div class="invalid-feedback">
+                                        Password Required
+    
+    
+                                    </div>
+                                </div>
+    
+                                
+    
+                                <div class="input-group mb-3">
+                                    <div class="input-group-prepend">
+                                        <span class="input-group-text">Email</span>
+                                    </div>
+                                    <input type="text" class="form-control" [(ngModel)]="user.email"  [ngModelOptions]="{standalone: true}" 
+                                    [ngClass]="{'is-invalid': email.errors && email.touched}" 
+                                name="email"
+                                #email="ngModel"
+                                required 
+                                pattern="[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?"
+                                    />
+                                    <div [hidden]="!email.errors?.required" 
+                                class="invalid-feedback">
+                                    Email Required
+
+
+                                </div>
+
+                                <div [hidden]="!email.errors?.pattern"
+                                class="invalid-feedback">
+                                    Enter a Valid Email
+
+
+                                </div>
+
+                                </div>
+    
+                                <div class="input-group mb-3">
+                                    <div class="input-group-prepend">
+                                        <span class="input-group-text">Mobile</span>
+                                    </div>
+                                    <input type="text" class="form-control" [(ngModel)]="user.mobile"  [ngModelOptions]="{standalone: true}" 
+                                    name="mobile"
+                                [ngClass]="{'is-invalid': mobile.errors && mobile.touched}"
+                                #mobile="ngModel"
+                                required
+                                pattern="^[789]\d{9}$"
+                                    />
+
+                                    <div class="invalid-feedback">
+                                        Enter a valid Indian Mobile number
+    
+    
+                                    </div>
+                                </div>
+                                <div class="row d-flex justify-content-center"  *ngIf="successMsg">
+                                    <div class="col-xs-12 ">
+                                      <p class="alert alert-success ">
+                                          <strong>Details Updated</strong>
+                            
+                                      </p>
+                                    </div>
+                                  </div>
+                                  <div class="row d-flex justify-content-center"  *ngIf="usernameMsg">
+                                    <div class="col-xs-12 ">
+                                      <p class="alert alert-danger ">
+                                          <strong>Username Already taken</strong>
+                            
+                                      </p>
+                                    </div>
+                                  </div>
+
+                                <button [disabled]="!userForm.form.valid" class="btn btn-success" (click)="onSubmit()">Submit</button>
+                                <button type="reset" class="btn btn-danger ml-2">Reset</button>
+                            </form>
+    
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </section>

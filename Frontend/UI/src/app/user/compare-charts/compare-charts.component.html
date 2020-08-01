@@ -1,0 +1,76 @@
+<div class="card shadow"  >
+    <p class="h4 card-header">Compare Sectors</p>
+    <div class="card-body bg-light">
+        <p class="card-text h6">Please fill the details:</p>
+        <form >
+            <div class="input-group mb-3">
+                <div class="input-group-prepend">
+                    <label class="input-group-text" for="inputGroupSelect01">Options</label>
+                </div>
+                <select class="custom-select" id="inputGroupSelect01" [(ngModel)]="form.first"  [ngModelOptions]="{standalone: true}">
+                    <option value="Financial">Financial</option>
+                    <option value="Industrial">Industrial</option>
+                    <option value="Telecom">Telecom</option>
+                    
+                    
+                </select>
+            </div>
+            <div class="input-group mb-3">
+                <div class="input-group-prepend">
+                    <label class="input-group-text" for="inputGroupSelect01">Options</label>
+                </div>
+                <select class="custom-select" id="inputGroupSelect01" [(ngModel)]="form.second"  [ngModelOptions]="{standalone: true}">
+                    <option value="Financial">Financial</option>
+                    <option value="Industrial">Industrial</option>
+                    <option value="Telecom">Telecom</option>
+                    
+                </select>
+            </div>
+           
+            
+            <div class="input-group mt-3 mb-3">
+                <div class="input-group-prepend">
+                    <span class="input-group-text">From</span>
+                </div>
+                <input type="date" class="form-control" [(ngModel)]="form.from"  [ngModelOptions]="{standalone: true}" />
+            </div>
+            <div class="input-group mt-3 mb-3">
+                <div class="input-group-prepend">
+                    <span class="input-group-text">To</span>
+                </div>
+                <input type="date" class="form-control" [(ngModel)]="form.to"  [ngModelOptions]="{standalone: true}" />
+            </div>
+            <div class="input-group mb-3">
+                <div class="input-group-prepend">
+                    <label class="input-group-text" for="inputGroupSelect02">Chart Type</label>
+                </div>
+                <select class="custom-select" id="inputGroupSelect02" [(ngModel)]="form.type"  [ngModelOptions]="{standalone: true}">
+                    
+                    <option value="line">Line Chart</option>
+                    <option value="bar">Bar Chart</option>
+                </select>
+            </div>
+            <div class="row d-flex justify-content-center"  *ngIf="incomplete">
+                <div class="col-xs-12 ">
+                  <p class="alert alert-danger ">
+                      <strong>Stock Data Unavailable</strong>
+        
+                  </p>
+                </div>
+              </div>
+            <div class="d-flex no-gutters ">
+                <div class="col  ">
+                    <button type="submit" class="btn-block btn btn-primary mt-3 mb-2" (click)="onSubmit()">Submit Data</button>
+                </div>
+                <div class="col ">
+                    <button [disabled]="!isActive"type="submit" class="btn-block btn btn-success mt-3 mb-2" (click)="onGenerate()">Generate Charts</button>
+                </div>
+                
+            </div>
+        </form>
+
+        
+    </div>
+</div>
+<div >
+

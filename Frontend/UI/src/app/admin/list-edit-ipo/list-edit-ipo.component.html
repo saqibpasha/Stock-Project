@@ -1,0 +1,40 @@
+<html>
+    <head>
+    <style>
+  
+
+    </style>
+</head>
+<div class="qw">
+
+<div class="card shadow">
+    <p class="h4 card-header text-center">List of IPOs</p>
+    <div class="card-body bg-light">
+            
+        <table class="table table-borderless table-hover">
+            <thead>
+                <tr class="">
+                    <th scope="col">ID</th>
+                    <th scope="col">IPO Company Name</th>
+                    <th scope="col">Stock Exchange</th>
+                    <th scope="col">Open Date(YYYY-MM-DD)</th>
+                    <th scope="col">Action</th>
+                </tr>
+            </thead>
+            <tbody>
+   
+                <tr *ngFor="let ipo of ipos">
+                    <th scope="row">{{ipo.id}}</th>
+                    <td>{{ipo.name}}</td>
+                    <td>{{ipo.stockExchange}}</td>
+                    <td>{{ipo.date}}</td>
+                    <td scope="col"><button class="btn btn-sm btn-outline-success"  routerLink='/admin/update-ipo/{{ipo.id}}' >Edit</button></td>
+                </tr>
+                
+            </tbody>
+        </table>
+
+    </div>
+</div>
+</div>
+</html>
