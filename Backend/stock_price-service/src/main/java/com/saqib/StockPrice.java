@@ -13,7 +13,7 @@ public class StockPrice
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	int id;
 	
-	@Column(unique=true)
+	
 	String date;
 	
 	String companyCode, stockExchange, price, time;
