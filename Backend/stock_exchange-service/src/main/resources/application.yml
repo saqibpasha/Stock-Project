@@ -1,6 +1,6 @@
 spring:
   datasource:
-    url: jdbc:mysql://localhost:3306/stockexchange?serverTimezone=UTC
+    url: jdbc:mysql://localhost:3306/stockexchange?createDatabaseIfNotExist=true&useSSL=true&serverTimezone=UTC
     username: root
     password:
     initialization-mode: always
