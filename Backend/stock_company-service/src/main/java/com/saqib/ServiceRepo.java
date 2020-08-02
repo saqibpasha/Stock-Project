@@ -11,6 +11,9 @@ public class ServiceRepo
 {
 	@Autowired
 	Repos repo;
+	
+	@Autowired
+	Feign config;
 
 	public void addNewCompany(StockCompany stockCompany) 
 	{
@@ -47,6 +50,16 @@ public class ServiceRepo
 	{
 		
 		return repo.findById(id);
+	}
+
+	public Iterable<String> getSector() 
+	{
+		return repo.getSector();
+	}
+
+	public Iterable<StockExchange> listStockExchange() 
+	{
+		return config.listStockExchange();
 	}
 
 

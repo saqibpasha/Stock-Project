@@ -26,6 +26,8 @@ export class CompareChartsComponent implements OnInit
   price2:any;
   date: any;
 
+  sectors: any
+
   
   form: Form=new Form("",new Date(),new Date(),"");
   code1:any;
@@ -35,6 +37,11 @@ export class CompareChartsComponent implements OnInit
 
   ngOnInit() 
   {
+    this.companyService.getSector().subscribe((data)=>{this.sectors=data;
+    
+    }
+    );
+    
   }
 
   public onSubmit()
@@ -48,12 +55,12 @@ export class CompareChartsComponent implements OnInit
     this.companyService.getCompanyBySector(this.form.first).subscribe((data)=>
     {
       let count=0;
-      //console.log(data);
+      
       
       for(var value in data)
       {
         
-        //console.log(data[value]);
+        
         
           if(count==0)
           {
@@ -116,7 +123,7 @@ export class CompareChartsComponent implements OnInit
       total += this.dataService.price1[i]*1;
       }
       this.dataService.avg1 = total / this.dataService.price1.length;
-              //console.log(this.dataService.price1);
+              
               
 
               
@@ -254,15 +261,18 @@ export class CompareChartsComponent implements OnInit
 
 
 
-    //console.log(this.dataService.price1);
-    //console.log(this.dataService.price2);
+    
     this.isActive=true; 
 
 
   }
   public onGenerate()
   {
-    if(this.stockPrices1==null && this.stockPrices2==null)
+    if(this.stockPrices1==null)
+    {
+      this.incomplete=true;
+    }
+    else if(this.stockPrices2==null)
     {
       this.incomplete=true;
     }

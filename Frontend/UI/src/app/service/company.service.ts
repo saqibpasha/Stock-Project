@@ -43,4 +43,14 @@ export class CompanyService {
     return this.http.get("http://localhost:8761/api/stock_company-service/getCompanyById/"+id);
   }
 
+  public getSector()
+  {
+    return this.http.get("http://localhost:8761/api/stock_company-service/getSector");
+  }
+
+  public listStockExchange()
+  {
+    return this.http.get("http://localhost:8761/api/stock_company-service/listStockExchange");
+  }
+
 }

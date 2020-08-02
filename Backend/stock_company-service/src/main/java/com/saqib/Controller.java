@@ -9,17 +9,21 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
+import org.springframework.cloud.openfeign.EnableFeignClients;
 
 
 
 
 @RestController
 @CrossOrigin(origins = "*", allowedHeaders = "*")
+@EnableFeignClients
 public class Controller 
 {
 	
 	@Autowired
 	ServiceRepo service;
+	
+	
 	
 	@RequestMapping(method=RequestMethod.POST, value="/addNewCompany")
 	void addNewCompany(@RequestBody StockCompany stockCompany) 
@@ -63,6 +67,20 @@ public class Controller
 	{
 		return service.getCompanyById(id);
 	}
+	
+	@RequestMapping(method=RequestMethod.GET, value="/getSector")
+	Iterable<String> getSector()
+	{
+		return service.getSector();
+	}
+	
+	@RequestMapping(method=RequestMethod.GET, value="/listStockExchange")
+	Iterable<StockExchange> listStockExchange()
+	{
+		return service.listStockExchange();
+	}
+	
+	
 	
 	
 

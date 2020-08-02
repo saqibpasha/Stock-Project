@@ -42,18 +42,8 @@ body{
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <div class="navbar-nav mx-auto">
 
-                    <div class="nav-item">
-                        <a class="nav-link" routerLink="/admin/upload">Import Stock Data</a>
-                    </div>
-                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                    <div class="nav-item">
-                        <a class="nav-link" routerLink="/admin/manage-company">Manage Company</a>
-                    </div>
                     
-                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<div class="nav-item">
-                        <a class="nav-link" routerLink="/admin/manage-exchange">Manage Exchange</a>
-                    </div>
-                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    
                     <!--
                     <div class="nav-item dropdown">
                     
@@ -80,18 +70,31 @@ body{
                     </div>
                     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                 -->
-                    <div class="nav-item">
-                        <a class="nav-link" routerLink="/admin/ipo">Manage IPO</a>
-                    </div>
-                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                   
                     
                             
                 </div>
+                <div class="nav-item">
+                    <a class="nav-link text-light" routerLink="/admin/manage-company">Company</a>
+                </div>
+                
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<div class="nav-item">
+                    <a class="nav-link text-light" routerLink="/admin/manage-exchange">Stock Exchange</a>
+                </div>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                <div class="nav-item">
+                    <a class="nav-link text-light" routerLink="/admin/ipo">IPO</a>
+                </div>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                <div class="nav-item">
+                    <a class="nav-link text-light" routerLink="/admin/upload">Import Stock Data</a>
+                </div>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                 <div class="navbar-nav">
                     <div class="nav-item">
                         <a class="nav-link d-flex" href="">
                             <i class="fa fa-user mr-2 mt-1"></i>
-                            <span>Logout</span>
+                            <span>Signout</span>
                         </a>
                     </div>
                 </div>
@@ -119,29 +122,34 @@ body{
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <div class="navbar-nav mx-auto">
 
-                    <div class="nav-item">
-                        <a class="nav-link" routerLink="/user/list-ipo">IPOs</a>
-                    </div>
-                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                    <div class="nav-item">
-                        <a class="nav-link" routerLink="/user/compare-company">Compare Company</a>
-                    </div>
-                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                    <div class="nav-item">
-                        <a class="nav-link" routerLink="/user/compare-sector">Compare Sector</a>
-                    </div>
-                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                    <div class="nav-item">
-                        <a class="nav-link" routerLink="/user/update-user">Update Profile</a>
-                    </div>
-                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+                    
                             
                 </div>
+                <div class="nav-item">
+                    <a class="nav-link text-light" routerLink="/user/list-company">Search Company</a>
+                </div>
+                
+                <div class="nav-item">
+                    <a class="nav-link text-light" routerLink="/user/list-ipo">IPOs</a>
+                </div>
+                
+                <div class="nav-item">
+                    <a class="nav-link text-light" routerLink="/user/compare-company">Compare Company</a>
+                </div>
+                
+                <div class="nav-item">
+                    <a class="nav-link text-light" routerLink="/user/compare-sector">Compare Sector</a>
+                </div>
+                
+                <div class="nav-item">
+                    <a class="nav-link text-light" routerLink="/user/update-user">Update Profile</a>
+                </div>
+               
                 <div class="navbar-nav">
                     <div class="nav-item">
                         <a class="nav-link d-flex" href="">
                             <i class="fa fa-user mr-2 mt-1"></i>
-                            <span>Logout</span>
+                            <span>Signout</span>
                         </a>
                     </div>
                 </div>

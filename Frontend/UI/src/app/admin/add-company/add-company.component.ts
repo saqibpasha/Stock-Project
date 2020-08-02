@@ -20,8 +20,7 @@ export class AddCompanyComponent implements OnInit
 
   ngOnInit() 
   {
-    let resp=this.stockService.listStock_Exchange();
-    resp.subscribe((data)=>this.stock_exchanges=data);
+    this.service.listStockExchange().subscribe((data)=>this.stock_exchanges=data);
   }
 
   backClicked() {

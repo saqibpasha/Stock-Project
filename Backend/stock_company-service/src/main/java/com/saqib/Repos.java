@@ -13,5 +13,8 @@ public interface Repos extends CrudRepository<StockCompany, Integer>
 	Iterable<StockCompany> findBySector(String sector);
 	Optional<StockCompany> findByCompanyName(String companyName);
 	
+	@Query(nativeQuery = true, value = "select distinct sector from stock_company")
+	Iterable<String> getSector();
+	
 	
 }

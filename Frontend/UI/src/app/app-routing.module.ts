@@ -58,6 +58,7 @@ const routes: Routes = [
     children: [
       { path: '', component: DetailsComponent },
       { path: 'details', component: DetailsComponent},
+      { path: 'list-company', component: ListCompanyComponent },
       { path: 'update-user', component: UpdateDetailsComponent},
       { path: 'chart', component: ChartComponent }, 
       { path: 'list-ipo', component: IpoListComponent},

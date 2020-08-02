@@ -17,9 +17,7 @@ export class ChartComponent implements OnInit
 
   ngOnInit(): void 
   {
-    console.log(this.dataService.price1);
-    console.log(this.dataService.price2);
-    //console.log(this.dataService.date);
+    
 
     if(this.dataService.name2==null)
     {

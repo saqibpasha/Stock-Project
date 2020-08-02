@@ -42,8 +42,7 @@ export class CompareDetailsComponent implements OnInit
 
   public onSubmit()
   {
-    /*let date=this.datepipe.transform(this.form.from, 'dd-MM-yyyy');
-    console.log(date);*/
+    
     this.dataService.name1=this.form.first;
     this.dataService.name2=this.form.second;
     this.dataService.type=this.form.type;
@@ -69,7 +68,7 @@ export class CompareDetailsComponent implements OnInit
       this.dataService.avg1 = total / this.dataService.price1.length;
 
 
-        //console.log(this.dataService.avg1);
+       
 
 
       });
@@ -93,7 +92,7 @@ export class CompareDetailsComponent implements OnInit
       }
       this.dataService.avg2 = total / this.dataService.price2.length;
 
-        console.log(this.dataService.avg2);
+        
 
 
       });
@@ -117,51 +116,23 @@ export class CompareDetailsComponent implements OnInit
 
   public onGenerate()
   {
-    if(this.stockPrices1==null && this.stockPrices2==null)
+    if(this.stockPrices1==null)
+    {
+      this.incomplete=true;
+    }
+    else if(this.stockPrices2==null)
     {
       this.incomplete=true;
     }
     else
     {
+      //console.log(this.dataService.price1);
       this.router.navigate(['/user/chart']);
     }
     
     
 
-    /*
-
-    this.chart = new Chart('canvas', {
-      type: 'line',
-      data: {
-        labels: this.date,
-        datasets: [
-          { 
-            data: this.price1,
-            borderColor: "#3cba9f",
-            fill: false
-          },
-          { 
-            data: this.price2,
-            borderColor: "#ffcc00",
-            fill: false
-          },
-        ]
-      },
-      options: {
-        legend: {
-          display: false
-        },
-        scales: {
-          xAxes: [{
-            display: true
-          }],
-          yAxes: [{
-            display: true
-          }],
-        }
-      }
-    });
-*/
+    
     
   }
 
