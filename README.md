@@ -19,7 +19,7 @@ Follow these three Steps in order
 
 #### Backend
 * Import all 6 microservices projects from **'Backend'** directory into SpringToolSuite/IntelliJ.
-* First run stock-registry(Eureka Server) as a spring boot app.
+* First run **stock-registry**(Eureka Server) as a spring boot app.
 * Run rest of the 5 microservices as a spring boot app in any order.
 * Check the status of all microservices on port ("localhost:8761") [Optional]
 
