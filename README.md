@@ -31,7 +31,7 @@ Follow these three Steps in order
 
 
 ## Note
-* Sample Data will get automatically stored into the Databases on starting the application for better User Experience.
+
 * Stock Price Excel Files are stored in the **Dataset** Folder.
 * Import Stock Price Excel Files of five companies from **Dataset** directory.
-
+* Sample Data will get automatically stored into the Databases on starting the application for better User Experience
