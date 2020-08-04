@@ -31,7 +31,7 @@ Follow these three Steps in order
 
 
 ## Note
-
 * Stock Price Excel Files are stored in the **Dataset** Folder.
 * Import Stock Price Excel Files of five companies from **Dataset** directory.
 * Sample Data will get automatically stored into the Databases on starting the application for better User Experience
+* Running Application Video Link [https://drive.google.com/file/d/1kU1nOSDjRSKo4tNAq1w9uK-OTt-A09M1/view?usp=sharing]
