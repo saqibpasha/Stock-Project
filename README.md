@@ -1,5 +1,5 @@
 # Stock-Show Project
-This is a Stock Market Charting Website made with Angular, Spring Boot and MySQL
+This is a Stock Market Trading Web application made with Angular, Spring Boot and MySQL
 ## Prerequisites
 * Java 8/8+
 * Angular ( for Frontend )
